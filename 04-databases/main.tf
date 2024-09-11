@@ -45,6 +45,7 @@ resource "null_resource" "mongodb" {
   }
 }
 
+
 module "redis" {
   source                 = "terraform-aws-modules/ec2-instance/aws"
   ami = data.aws_ami.centos8.id
@@ -83,14 +84,15 @@ resource "null_resource" "redis" {
     destination = "/tmp/bootstrap.sh"
   }
 
-  provisioner "remote-exec" {
-    # Bootstrap script called with private_ip of each node in the cluster
-    inline = [
-      "chmod +x /tmp/bootstrap.sh",
-      "sudo sh /tmp/bootstrap.sh redis dev"
-    ]
-  }
-}
+    provisioner "remote-exec" {
+        # Bootstrap script called with private_ip of each node in the cluster
+        inline = [
+          "chmod +x /tmp/bootstrap.sh",
+          "sudo sh /tmp/bootstrap.sh redis dev"
+        ]
+      }
+    }
+
 
 module "mysql" {
   source                 = "terraform-aws-modules/ec2-instance/aws"
@@ -111,11 +113,11 @@ module "mysql" {
   )
 }
 
-resource "null_resource" "mysql" {
-  # Changes to any instance of the cluster requires re-provisioning
-  triggers = {
-    instance_id = module.mysql.id
-  }
+  resource "null_resource" "mysql" {
+    # Changes to any instance of the cluster requires re-provisioning
+    triggers = {
+      instance_id = module.mysql.id
+    }
 
   # Bootstrap script can run on any instance of the cluster
   # So we just choose the first in this case

@@ -1,3 +1,5 @@
+
+
 variable "common_tags" {
   default = {
     Project     = "roboshop"
@@ -16,3 +18,4 @@ variable "environment" {
 variable "zone_name" {
   default = "daws66s.online"
 }
+
