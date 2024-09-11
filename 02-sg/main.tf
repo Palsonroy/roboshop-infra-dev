@@ -1,7 +1,8 @@
 module "vpn" {
-  source         = "git::https://github.com/daws-76s/terraform-aws-security-group.git?ref=main"
+  # source         = "git::https://github.com/daws-76s/terraform-aws-security-group.git?ref=main"
+  source = "git@github.com:Palsonroy/terraform-aws-security.git"
   project_name   = var.project_name
-  environment    = var.environment
+  envirnoment    = var.environment
   sg_description = "SG for VPN"
   vpc_id         = data.aws_vpc.default.id
   sg_name        = "vpn"
@@ -9,9 +10,10 @@ module "vpn" {
 }
 
 module "mongodb" {
-  source         = "git::https://github.com/daws-76s/terraform-aws-security-group.git?ref=main"
+  #source         = "git::https://github.com/daws-76s/terraform-aws-security-group.git?ref=main"
+  source = "git@github.com:Palsonroy/terraform-aws-security.git"
   project_name   = var.project_name
-  environment    = var.environment
+  envirnoment    = var.environment
   sg_description = "SG for MongoDB"
   vpc_id         = data.aws_ssm_parameter.vpc_id.value
   sg_name        = "mongodb"
@@ -19,9 +21,10 @@ module "mongodb" {
 }
 
 module "redis" {
-  source         = "git::https://github.com/daws-76s/terraform-aws-security-group.git?ref=main"
+  #source         = "git::https://github.com/daws-76s/terraform-aws-security-group.git?ref=main"
+   source = "git@github.com:Palsonroy/terraform-aws-security.git"
   project_name   = var.project_name
-  environment    = var.environment
+  envirnoment    = var.environment
   sg_description = "SG for redis"
   vpc_id         = data.aws_ssm_parameter.vpc_id.value
   sg_name        = "redis"
@@ -29,9 +32,10 @@ module "redis" {
 }
 
 module "mysql" {
-  source         = "git::https://github.com/daws-76s/terraform-aws-security-group.git?ref=main"
+  #source         = "git::https://github.com/daws-76s/terraform-aws-security-group.git?ref=main"
+  source = "git@github.com:Palsonroy/terraform-aws-security.git"
   project_name   = var.project_name
-  environment    = var.environment
+  envirnoment    = var.environment
   sg_description = "SG for mysql"
   vpc_id         = data.aws_ssm_parameter.vpc_id.value
   sg_name        = "mysql"
@@ -39,9 +43,10 @@ module "mysql" {
 }
 
 module "rabbitmq" {
-  source         = "git::https://github.com/daws-76s/terraform-aws-security-group.git?ref=main"
+  #source         = "git::https://github.com/daws-76s/terraform-aws-security-group.git?ref=main"
+  source = "git@github.com:Palsonroy/terraform-aws-security.git"
   project_name   = var.project_name
-  environment    = var.environment
+  envirnoment    = var.environment
   sg_description = "SG for rabbitmq"
   vpc_id         = data.aws_ssm_parameter.vpc_id.value
   sg_name        = "rabbitmq"
@@ -49,9 +54,10 @@ module "rabbitmq" {
 }
 
 module "catalogue" {
-  source         = "git::https://github.com/daws-76s/terraform-aws-security-group.git?ref=main"
+  #source         = "git::https://github.com/daws-76s/terraform-aws-security-group.git?ref=main"
+  source = "git@github.com:Palsonroy/terraform-aws-security.git"
   project_name   = var.project_name
-  environment    = var.environment
+  envirnoment    = var.environment
   sg_description = "SG for catalogue"
   vpc_id         = data.aws_ssm_parameter.vpc_id.value
   sg_name        = "catalogue"
@@ -59,9 +65,10 @@ module "catalogue" {
 }
 
 module "user" {
-  source         = "git::https://github.com/daws-76s/terraform-aws-security-group.git?ref=main"
+#  source         = "git::https://github.com/daws-76s/terraform-aws-security-group.git?ref=main"
+  source = "git@github.com:Palsonroy/terraform-aws-security.git"
   project_name   = var.project_name
-  environment    = var.environment
+  envirnoment    = var.environment
   sg_description = "SG for user"
   vpc_id         = data.aws_ssm_parameter.vpc_id.value
   sg_name        = "user"
@@ -69,9 +76,10 @@ module "user" {
 }
 
 module "cart" {
-  source         = "git::https://github.com/daws-76s/terraform-aws-security-group.git?ref=main"
+  # source         = "git::https://github.com/daws-76s/terraform-aws-security-group.git?ref=main"
+  source = "git@github.com:Palsonroy/terraform-aws-security.git"
   project_name   = var.project_name
-  environment    = var.environment
+  envirnoment    = var.environment
   sg_description = "SG for cart"
   vpc_id         = data.aws_ssm_parameter.vpc_id.value
   sg_name        = "cart"
@@ -79,9 +87,10 @@ module "cart" {
 }
 
 module "shipping" {
-  source         = "git::https://github.com/daws-76s/terraform-aws-security-group.git?ref=main"
+  # source         = "git::https://github.com/daws-76s/terraform-aws-security-group.git?ref=main"
+  source = "git@github.com:Palsonroy/terraform-aws-security.git"
   project_name   = var.project_name
-  environment    = var.environment
+  envirnoment    = var.environment
   sg_description = "SG for shipping"
   vpc_id         = data.aws_ssm_parameter.vpc_id.value
   sg_name        = "shipping"
@@ -89,9 +98,10 @@ module "shipping" {
 }
 
 module "payment" {
-  source         = "git::https://github.com/daws-76s/terraform-aws-security-group.git?ref=main"
+  # source         = "git::https://github.com/daws-76s/terraform-aws-security-group.git?ref=main"
+  source = "git@github.com:Palsonroy/terraform-aws-security.git"
   project_name   = var.project_name
-  environment    = var.environment
+  envirnoment    = var.environment
   sg_description = "SG for payment"
   vpc_id         = data.aws_ssm_parameter.vpc_id.value
   sg_name        = "payment"
@@ -99,9 +109,10 @@ module "payment" {
 }
 
 module "web" {
-  source         = "git::https://github.com/daws-76s/terraform-aws-security-group.git?ref=main"
+  # source         = "git::https://github.com/daws-76s/terraform-aws-security-group.git?ref=main"
+  source = "git@github.com:Palsonroy/terraform-aws-security.git"
   project_name   = var.project_name
-  environment    = var.environment
+  envirnoment    = var.environment
   sg_description = "SG for web"
   vpc_id         = data.aws_ssm_parameter.vpc_id.value
   sg_name        = "web"
@@ -109,9 +120,10 @@ module "web" {
 }
 
 module "app_alb" {
-  source         = "git::https://github.com/daws-76s/terraform-aws-security-group.git?ref=main"
+  # source         = "git::https://github.com/daws-76s/terraform-aws-security-group.git?ref=main"
+   source = "git@github.com:Palsonroy/terraform-aws-security.git"
   project_name   = var.project_name
-  environment    = var.environment
+  envirnoment    = var.environment
   sg_description = "SG for APP ALB"
   vpc_id         = data.aws_ssm_parameter.vpc_id.value
   sg_name        = "app-alb"
@@ -119,9 +131,10 @@ module "app_alb" {
 }
 
 module "web_alb" {
-  source         = "git::https://github.com/daws-76s/terraform-aws-security-group.git?ref=main"
+  # source         = "git::https://github.com/daws-76s/terraform-aws-security-group.git?ref=main"
+   source = "git@github.com:Palsonroy/terraform-aws-security.git"
   project_name   = var.project_name
-  environment    = var.environment
+  envirnoment    = var.environment
   sg_description = "SG for Web ALB"
   vpc_id         = data.aws_ssm_parameter.vpc_id.value
   sg_name        = "web-alb"
